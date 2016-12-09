@@ -1,13 +1,23 @@
-### DevRant.io Unofficial API documentation
+## DevRant.io Unofficial API documentation
 
-API base endpoint: [https://www.devrant.io/api](https://www.devrant.io/api)
+__From the official site__: _devRant is a fun community for developers to share and bond over their successes and frustrations with code, tech, and life as a programmer. devRant is built by just one developer (devRant: [@dfox](https://www.devrant.io/users/dfox) Twitter: [@dfoxinator](https://twitter.com/DFoxinator)) and one designer (devRant: [@trogus](https://www.devrant.io/users/trogus) Twitter: [@tim_rogus](https://twitter.com/tim_rogus)) working on this project nights and weekends._
 
-```/get-user-id```
-Method: GET
-Parameters: app, user
-Brief: Get user ID from username. 
-Example: [https://www.devrant.io/api/get-user-id?app=3&username=abhn](https://www.devrant.io/api/get-user-id?app=3&username=abhn)
-Response:
+Here is a raw documentation of the DevRant public API. It is, as far as I know, largly undocumented and lacks a lot of methods that require authentication, which needs some work.
+
+I've mostly used [Danillouz's work](https://github.com/danillouz/devrant) here, so in case you need a readymade package that is easier to work with, check his repository out.
+
+Also, API response truncated to save space and frustrations. 
+
+### API base endpoint: [https://www.devrant.io/api](https://www.devrant.io/api)
+
+### ```/get-user-id```
+
+* **Method**: GET
+* **Parameters**: app, user
+* **Brief**: Get user ID from username. 
+* **Example**: [https://www.devrant.io/api/get-user-id?app=3&username=abhn](https://www.devrant.io/api/get-user-id?app=3&username=abhn)
+* **Response**:
+
 ```
 {
   "success": true,
@@ -15,16 +25,18 @@ Response:
 }
 ```
 
-```/devrant/rants/```
-Method: GET
-Parameters: app
-Optional parameters: 
-* sort[algo, top, recent]
-* limit: number of rants to fetch 
-* skip: Skip the first N rants and fetch from there
-Brief: Fetches a list of rants
-Example: [https://www.devrant.io/api/devrant/rants?app=3](https://www.devrant.io/api/devrant/rants?app=3)
-Response: An array of rants with various parameters
+### ```/devrant/rants/```
+
+* **Method**:GET
+* **Parameters**: app
+* **Optional parameters**:
+  * **sort** [algo, top, recent]: sort the rants according to the parameter
+  * **limit**: number of rants to fetch 
+  * **skip**: Skip the first N rants and fetch from there
+* **Brief**: Fetches a list of rants
+* **Example**: [https://www.devrant.io/api/devrant/rants?app=3](https://www.devrant.io/api/devrant/rants?app=3)
+* **Response**: An array of rants with various parameters
+
 ```
 {
   "success": true,
@@ -61,12 +73,14 @@ Response: An array of rants with various parameters
 }
 ```
 
-```devrant/rants/${rant_id}?app=3	```
-Method: GET
-Parameters: app
-Brief: Fetches a single rant with comments
-Example: [https://www.devrant.io/api/devrant/rants/327111?app=3](https://www.devrant.io/api/devrant/rants/327111?app=3)
-Response:
+### ```devrant/rants/${rant_id}?app=3```
+
+* **Method**: GET
+* **Parameters**: app
+* **Brief**: Fetches a single rant with comments
+* **Example**: [https://www.devrant.io/api/devrant/rants/327111?app=3](https://www.devrant.io/api/devrant/rants/327111?app=3)
+* **Response**:
+
 ```
 {
   "rant": {
@@ -96,12 +110,14 @@ Response:
 }
 ```
 
-```/devrant/search```
-Method: GET
-Parameters: app, term
-Brief: Fetches rants matching the search term
-Example: [https://www.devrant.io/api/devrant/search?app=3&term=git](https://www.devrant.io/api/devrant/search?app=3&term=git)
-Response:
+### ```/devrant/search```
+
+* *** *** **Method**: GET
+* **Parameters**: app, term
+* **Brief**: Fetches rants matching the search term
+* **Example**: [https://www.devrant.io/api/devrant/search?app=3&term=git](https://www.devrant.io/api/devrant/search?app=3&term=git)
+* **Response**:
+
 ```
 {
   "success": true,
@@ -130,15 +146,18 @@ Response:
     }
   ]
 }
-
-```/users/${user_id}```
-Method: GET
-Parameters: app
-Brief: Fetches detailed information about a user (profile, rants, favorites, upvoted)
-Example: [https://www.devrant.io/api/users/101178?app=3](https://www.devrant.io/api/users/101178?app=3)
-Response: A large JSON blog with the following important keys
 ```
-Object.keys(temp1.profile)
+
+### ```/users/${user_id}```
+
+* **Method**: GET
+* **Parameters**: app
+* **Brief**: Fetches detailed information about a user (profile, rants, favorites, upvoted)
+* **Example**: [https://www.devrant.io/api/users/101178?app=3](https://www.devrant.io/api/users/101178?app=3)
+* **Response**: A large JSON blog with the following important keys
+
+```
+Object.keys(temp1.profile) // chrome console magic!
 ["username", "score", "about", "location", "created_time", "skills", "github", "website", "content", "avatar"]
 Object.keys(temp1.profile.content.content)
 ["rants", "upvoted", "comments", "favorites"]
