@@ -1,4 +1,4 @@
-## DevRant.io Unofficial API documentation
+## [DevRant.io](https://www.devrant.io) Unofficial API documentation
 
 __From the official site__: _devRant is a fun community for developers to share and bond over their successes and frustrations with code, tech, and life as a programmer. devRant is built by just one developer (devRant: [@dfox](https://www.devrant.io/users/dfox) Twitter: [@dfoxinator](https://twitter.com/DFoxinator)) and one designer (devRant: [@trogus](https://www.devrant.io/users/trogus) Twitter: [@tim_rogus](https://twitter.com/tim_rogus)) working on this project nights and weekends._
 
