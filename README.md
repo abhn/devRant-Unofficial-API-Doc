@@ -119,7 +119,7 @@ Also, API response truncated to save space and frustrations.
 
 ### ```/devrant/search```<a name="search"></a>
 
-* *** *** **Method**: GET
+* **Method**: GET
 * **Parameters**: app, term
 * **Brief**: Fetches rants matching the search term
 * **Example**: [https://www.devrant.io/api/devrant/search?app=3&term=git](https://www.devrant.io/api/devrant/search?app=3&term=git)
