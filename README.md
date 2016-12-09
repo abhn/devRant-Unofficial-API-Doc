@@ -10,7 +10,14 @@ Also, API response truncated to save space and frustrations.
 
 ### API base endpoint: [https://www.devrant.io/api](https://www.devrant.io/api)
 
-### ```/get-user-id```
+### Index
+* [Get user ID](#getuserid)
+* [Get rants](#getrants)
+* [Get a rant with comments](#getarant)
+* [Search](#search)
+* [Get user profile](#getuser)
+
+### ```/get-user-id```<a name="getuserid"></a>
 
 * **Method**: GET
 * **Parameters**: app, user
@@ -25,7 +32,7 @@ Also, API response truncated to save space and frustrations.
 }
 ```
 
-### ```/devrant/rants/```
+### ```/devrant/rants/```<a name="getrants"></a>
 
 * **Method**:GET
 * **Parameters**: app
@@ -73,7 +80,7 @@ Also, API response truncated to save space and frustrations.
 }
 ```
 
-### ```devrant/rants/${rant_id}?app=3```
+### ```devrant/rants/${rant_id}?app=3```<a name="getarant<a name="headin"></a>"></a>
 
 * **Method**: GET
 * **Parameters**: app
@@ -110,7 +117,7 @@ Also, API response truncated to save space and frustrations.
 }
 ```
 
-### ```/devrant/search```
+### ```/devrant/search```<a name="search"></a>
 
 * *** *** **Method**: GET
 * **Parameters**: app, term
@@ -148,7 +155,7 @@ Also, API response truncated to save space and frustrations.
 }
 ```
 
-### ```/users/${user_id}```
+### ```/users/${user_id}```<a name="getuser"></a>
 
 * **Method**: GET
 * **Parameters**: app
