@@ -80,7 +80,7 @@ Also, API response truncated to save space and frustrations.
 }
 ```
 
-### ```devrant/rants/${rant_id}?app=3```<a name="getarant<a name="headin"></a>"></a>
+### ```devrant/rants/${rant_id}?app=3```<a name="getarant"></a>
 
 * **Method**: GET
 * **Parameters**: app
